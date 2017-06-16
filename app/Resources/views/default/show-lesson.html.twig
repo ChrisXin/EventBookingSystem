@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+<div class="row">
+	<div class="col-xs-12">
+		<table class="table">
+		<caption>Lessons List</caption>
+		<tr>
+			<th>Name</th>
+			<th>Code</th>
+			<th>Teacher</th>
+			<th>Time</th>
+			<th>Price</th>
+			<th>Operation</th>
+		</tr>
+		{% for lesson in lessons%}
+		<tr>
+			<td>{{ lesson.name }}</td>
+			<td>{{ lesson.code }}</td>
+			<td>{{ lesson.teacher }}</td>
+			<td>{{ lesson.time | date }}</td>
+			<td>{{ lesson.price }}</td>
+			<td><a href="/book/{{ lesson.id }}">Book this lesson</a></td>
+		</tr>
+		{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}

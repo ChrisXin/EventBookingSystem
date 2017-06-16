@@ -1,0 +1,73 @@
+{% extends 'layout.html.twig' %}
+
+{% block swiper %}
+{% endblock %}
+
+{% block stylesheet %}
+<style>
+body {
+    background-attachment: fixed;
+    background-image: url( {{ asset('statics/images/bg.jpg') }} );	
+}
+</style>
+{% endblock %}
+
+{% block body %}
+
+
+<div class="top-content">
+        	
+<div class="inner-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text">
+				<h1><strong>Lesson Name and Code here</h1>
+				<div class="description">
+					<p>
+						This is the lesson description and some details. 
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3 form-box">
+				
+				{{ form_start(form) }}
+					<fieldset style="display: block;">
+						<div class="form-top">
+							<div class="form-top-left">
+								<h3>Book it now!</h3>
+								<p>Tell us who you are:</p>
+							</div>
+							<div class="form-top-right">
+								<i class="fa fa-user"></i>
+							</div>
+						</div>
+						<div class="form-bottom">
+							<div class="form-group">
+								{{ form_widget(form.firstName, { 'attr': { 'class': 'form-control', 'placeholder': 'First Name' } }) }}
+							</div>
+							<div class="form-group">
+								{{ form_widget(form.lastName, { 'attr': { 'class': 'form-control', 'placeholder': 'Last Name' } }) }}
+							</div>
+							<div class="form-group">
+								{{ form_widget(form.phoneNumber, { 'attr': { 'class': 'form-control', 'placeholder': 'Phone Number' } }) }}
+							</div>
+							<div class="form-group">
+								{{ form_widget(form.wechat, { 'attr': { 'class': 'form-control', 'placeholder': 'Wechat' } }) }}
+							</div>
+							<div class="form-group">
+								{{ form_widget(form.email, { 'attr': { 'class': 'form-control', 'placeholder': 'Email' } }) }}
+							</div>
+							{{ form_widget(form.save, { 'attr': { 'class': 'btn btn-default' } }) }}
+						</div>
+					</fieldset>
+				{{ form_end(form) }}
+				
+			</div>
+		</div>
+	</div>
+</div>
+            
+</div>
+{% endblock %}

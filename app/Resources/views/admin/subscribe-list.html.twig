@@ -1,0 +1,45 @@
+{% extends 'admin.html.twig' %}
+
+{% block swiper %}
+{% endblock %}
+
+{% block stylesheet %}
+<style>
+.btn { padding: 0 5px!important; }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="row">
+	<div class="col-xs-12">
+		<table class="table">
+		<tr>
+			<th>Lesson Name</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Phone</th>
+			<th>Email</th>
+			<th>Wechat</th>
+			<th>Paid Status</th>
+		</tr>
+		{% for subscribe in subscribes %}
+		<tr>
+			<td>{{ subscribe.lesson.name }}</td>
+			<td>{{ subscribe.firstName }}</td>
+			<td>{{ subscribe.lastName }}</td>
+			<td>{{ subscribe.phoneNumber }}</td>
+			<td>{{ subscribe.email }}</td>
+			<td>{{ subscribe.wechat }}</td>
+			<td>
+			{% if subscribe.paidStatus == 1 %}
+				<button class="btn btn-success" onclick="location='/subscribe/{{subscribe.id}}/pay/0';">Paid</button>
+			{% else %}
+				<button class="btn btn-warning" onclick="location='/subscribe/{{subscribe.id}}/pay/1';">Not Paid</button>
+			{% endif %}
+			</td>
+		</tr>
+		{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}

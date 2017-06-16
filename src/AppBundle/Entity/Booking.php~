@@ -1,0 +1,57 @@
+<?php
+
+// src/AppBundle/Entity/Booking.php
+ 
+namespace AppBundle\Entity;
+ 
+use Doctrine\ORM\Mapping as ORM;
+ 
+/**
+ * @ORM\Table(name="booking")
+ * @ORM\Entity
+ */
+class Booking
+{
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+ 
+    /**
+     * @ORM\Column(name="first_name", type="string", length=64)
+     */
+    private $firstName;
+
+    /**
+     * @ORM\Column(name="last_name", type="string", length=64)
+     */
+	private $lastName;
+
+	/**
+     * @ORM\Column(name="phone", type="string", length=32)
+     */
+	private $phoneNumber;
+
+    /**
+     * @ORM\Column(type="string", length=64)
+     */
+    private $email;
+
+    /**
+     * @ORM\Column(type="string", length=64)
+     */
+    private $wechat;
+
+	/**
+     * @ORM\ManyToOne(targetEntity="Lesson")
+     * @ORM\JoinColumn(name="lesson_id", referencedColumnName="id")
+     */
+	private $lesson;
+
+    /**
+     * @ORM\Column(name="paid_status", type="boolean")
+     */
+	private $paidStatus;
+}

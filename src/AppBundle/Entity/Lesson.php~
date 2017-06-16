@@ -1,0 +1,71 @@
+<?php
+
+// src/AppBundle/Entity/Lesson.php
+ 
+namespace AppBundle\Entity;
+ 
+use Doctrine\ORM\Mapping as ORM;
+ 
+/**
+ * @ORM\Table(name="lesson")
+ * @ORM\Entity
+ */
+class Lesson
+{
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+ 
+    /**
+     * @ORM\Column(type="string", length=64, unique=true)
+     */
+    private $code;
+
+    /**
+     * @ORM\Column(type="string", length=64)
+     */
+	private $name;
+
+	/**
+     * @ORM\Column(type="string", length=64)
+     */
+	private $mode;
+
+    /**
+     * @ORM\Column(type="string", length=64)
+     */
+    private $session;
+
+    /**
+     * @ORM\Column(type="string", length=64)
+     */
+	private $teacher;
+
+	/**
+     * @ORM\Column(type="datetime")
+     */
+	private $time;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+	private $place;
+
+    /**
+     * @ORM\Column(type="decimal", scale=2)
+     */
+	private $price;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+	private $description;	
+
+	/**
+     * @ORM\Column(type="string", length=32)
+     */
+	private $status;
+}
