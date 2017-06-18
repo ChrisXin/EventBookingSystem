@@ -16,14 +16,13 @@
 		  
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-		<link rel="stylesheet" href="//apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.css">
-		<link rel="stylesheet" href="//apps.bdimg.com/libs/fontawesome/4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="{{ asset('statics/css/font-awesome.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('statics/css/bootstrap.css') }}" />
 		<link rel="stylesheet" href="{{ asset('statics/css/style.css') }}" />
 
-
         {% block javascripts %}{% endblock %}
-		<script src="//apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="//apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<script src="{{ asset('statics/js/jquery.min.js') }}"></script>
+		<script src="{{ asset('statics/js/bootstrap.min.js') }}"></script>
     </head>
     <body>
 		{% block nav %}

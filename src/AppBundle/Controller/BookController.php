@@ -60,6 +60,7 @@ class BookController extends Controller
 		}
  
         return $this->render('default/book-lesson.html.twig', array(
+			'lesson' => $lesson,
             'form' => $form->createView(),
         ));
     }
